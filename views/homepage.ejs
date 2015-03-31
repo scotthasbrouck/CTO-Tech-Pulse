@@ -171,3 +171,19 @@
 		<div class="alert alert-info" role="alert">
 			<strong><i class="fa fa-chevron-right"></i> P2</strong>: Finalize proposed changes to tech stack for Feb 12th board meeting, along with monthly budget, and outline reasons for the new redundancies.
 		</div>
+
+		<!-- latest commits -->
+		<div class="page-header">
+			<h2><i class="fa fa-github-alt"></i> Latest Commits</h2>
+		</div>
+
+    <ol>
+      <% for(var i=0; i<results.length; i++) {%>
+        <li>
+          <div class="">
+            <a href="<%= results[i].url %>"><%= results[i].sha %></a> - <%= results[i].commit.message %>
+          </div>
+        </li>
+      <% } %>
+    </ol>
+
