@@ -1,0 +1,15 @@
+/*
+VisuHire CTO Report
+Scott Hasbrouck (C) 2014
+License: CC BY 4.0
+http://creativecommons.org/licenses/by/4.0/
+*/
+
+.jumbotron:nth-of-type(1) {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.progress {
+	margin-top: 30px;
+}

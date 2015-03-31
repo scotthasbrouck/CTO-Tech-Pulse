@@ -1,0 +1,216 @@
+<!--
+VisuHire CTO Report
+Scott Hasbrouck (C) 2014
+License: CC BY 4.0
+http://creativecommons.org/licenses/by/4.0/
+-->
+
+<html>
+<head>
+	<title>Kickass, Inc. Tech Pulse</title>
+	<!-- Chart.js graphing -->
+	<script src="js/chart.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	<!-- TechPulse Styles -->
+	<link rel="stylesheet" href="css/TechPulse.css">
+	<!-- font glyphs -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body role="document">
+	<div class="container theme-showcase" role="main">
+		<!-- header -->
+		<div class="jumbotron">
+			<img src="images/Rad_Logo.png" />
+			<h2>Kickass, Inc. Tech Pulse</h2>
+			<h4>Jan 21st, 2015 Weekly CTO Report</h4>
+			<h5>Cached Mar 31st, 2015</h5>
+		</div>
+
+		<!-- synopsis -->
+		<div class="page-header">
+			<h2><i class="fa fa-tachometer"></i> CTO Synopsis</h2>
+		</div>
+		<p>
+			This  week brought one unexpected challenges. As expected from the prior week's observation, our new Node developer, John Smith, had a difficult time assessing his workload this week, and thus was over commited. As a result, a buggy patch was sent to QA last week, and our QA team failed to catch a database validation error. This patch was pushed to roduction Saturday morning, which resulted in over 1000 database write errors. PagerDuty successfully notified me of the errors, and I reverted to the old patch within 20 minutes of the event. I will be making a report of suggestions for our new developer, and our QA tester, along with writing tests against the bugs that slipped through. Our other new developer, Mark Jones successfully completed his weekly sprint commitments, although he was up late Saturday night to do so.
+			<br />Despite the errors on Saturday, our stack had a 99.997% overall uptime. Our app suffered an outage Wednesday afternoon at 12:45:46 GMT, due to a Level3 failure at the Rackspace data center. The HAProxy load balancer dropped for 32 seconds Friday night at 21:57:38 GMT, so I will be adding a measurement of the uptime of that server to this report next week. All feature goals and bug fixes in this week's sprint were completed on time, and are in QA this week. I do not anticipate any issues, so the video profile upload feature many customers are asking for, should launch on time next Friday.
+		</p>
+
+		<!-- dev team pulse -->
+		<div class="page-header">
+			<h2><i class="fa fa-male"></i> Dev Team Pulse</h2>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Dev</th>
+					<th>Ontime Bug Fixes</th>
+					<th>&#916; Last Week</th>
+					<th>Ontime Features</th>
+					<th>&#916; Last Week</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sally Rider</td>
+					<td>100%</td>
+					<td><span class="label label-success">+2%</span></td>
+					<td>100%</td>
+					<td><span class="label label-success">+4%</span></td>
+				</tr>
+				<tr>
+					<td>John Smith</td>
+					<td>72%</td>
+					<td><span class="label label-danger">-19%</span></td>
+					<td>45%</td>
+					<td><span class="label label-danger">-34%</span></td>
+				</tr>
+				<tr>
+					<td>Mark Jones</td>
+					<td>100%</td>
+					<td><span class="label label-success">+5%</span></td>
+					<td>100%</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Neil Armstrong</td>
+					<td>94%</td>
+					<td><span class="label label-danger">-5%</span></td>
+					<td>92%</td>
+					<td><span class="label label-success">+1%</span></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- tech stack pulse -->
+		<div class="page-header">
+			<h2><i class="fa fa-database"></i> Tech Stack Pulse</h2>
+		</div>
+		<p>
+			<h4>Client Response Time</h4>
+			<canvas id="LoadTimeChart" width="800" height="200"></canvas>
+			<h4>VisuHire Uptime</h4>
+			<canvas id="UpTimeChart" width="800" height="200"></canvas>
+			<h4>VisuHire Error Rates</h4>
+			<canvas id="ErrorRateChart" width="800" height="200"></canvas>
+		</p>
+
+		<!-- milestone pulse -->
+		<div class="page-header">
+			<h2><i class="fa fa-code-fork"></i> Feature Milestone Pulse</h2>
+		</div>
+		<p>
+			<div class="progress">
+		        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%"><span>89% - On Time</span></div>
+			</div>
+			<h4>Video Profile Milestone (3 sprints total)</h4>
+			<div class="progress">
+			    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="width: 56%"><span>56% - On Time</span></div>
+			</div>
+			<h4>LinkedIn Integration (4 sprints total)</h4>
+			<div class="progress">
+			    <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100" style="width: 24%"><span>24% - 1 Sprint Behind</span></div>
+			</div>
+			<h4>3 Way Conference Calling (6 sprints total)</h4>
+		</p>
+
+		<!-- code base pulse -->
+		<div class="page-header">
+			<h2><i class="fa fa-code"></i> Code Base Pulse</h2>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Weekly Commits</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>This Week 34</strong><br />
+			      Last Week 28
+			    </div>
+			  </div>
+			  <div class="panel panel-primary">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Javascript</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>12,567 lines</strong><br />
+			      Up 567 Lines
+			    </div>
+			  </div>
+			</div><!-- /.col-sm-4 -->
+			<div class="col-sm-4">
+			  <div class="panel panel-success">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Bug Fixes</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>This Week 22</strong><br />
+			      Last Week 18
+			    </div>
+			  </div>
+			  <div class="panel panel-info">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Python</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>13,354 lines</strong><br />
+			      Up 1,267 Lines
+			    </div>
+			  </div>
+			</div><!-- /.col-sm-4 -->
+			<div class="col-sm-4">
+			  <div class="panel panel-warning">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Open Bugs</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>This Week 14</strong><br />
+			      Last Week 17
+			    </div>
+			  </div>
+			  <div class="panel panel-danger">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Roach Events</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>This Week 1</strong><br />
+			      Last Week 0
+			    </div>
+			  </div>
+			</div><!-- /.col-sm-4 -->
+		</div>
+
+		<!-- action items -->
+		<div class="page-header">
+			<h2><i class="fa fa-bolt"></i> CTO Action Items</h2>
+		</div>
+		<div class="alert alert-danger" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P0</strong>: Identify source of QA missing database write bug. Document, and make appropriate changes to QA procedure to prevent future missed bugs.
+		</div>
+		<div class="alert alert-danger" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P0</strong>: Collect list of all affected users from Staurday's outage, draft message, and send with apology, explanation, and steps that we've taken to prevent future outages.
+		</div>
+		<div class="alert alert-warning" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P1</strong>: Skype feedback meeting with John Smith to develop action items for him to better plan his workload, and avoid overcommiting in the future.
+		</div>
+		<div class="alert alert-warning" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P1</strong>: Add HAProxy load balancer to NewRelic monitoring, and generate uptime metrics for future CTO reports. Identify source of downtime, change stack and fireplan accordingly.
+		</div>
+		<div class="alert alert-info" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P2</strong>: Finalize proposed changes to tech stack for Feb 12th board meeting, along with monthly budget, and outline reasons for the new redundancies.
+		</div>
+
+	</div>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Bootstrap -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<!-- Retina.js -->
+	<script type="text/javascript" src="js/retina.js"></script>
+	<!-- TechPulse JS -->
+	<script src="js/TechPulse.js"></script>
+</body>
+</html>
