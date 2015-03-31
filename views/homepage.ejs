@@ -1,74 +1,173 @@
-<!-- Default home page -->
-<link type="text/css" href='http://sailsjs.org/styles/fonts.css' rel='stylesheet'/>
-<style>
-    /* Styles included inline since you'll probably be deleting this page anyway */
-    html,body{text-align:left;font-size:1em}html,body,img,form,textarea,input,fieldset,div,p,div,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,code{margin:0;padding:0}ul,li{list-style:none}img{display:block}a img{border:0}a{text-decoration:none;font-weight:normal;font-family:inherit}*:active,*:focus{outline:0;-moz-outline-style:none}h1,h2,h3,h4,h5,h6{font-weight:normal}div.clear{clear:both}.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}body{font-family:"Open Sans",Arial,sans-serif;font-weight:300;}.top-bar {width: 100%; background-color: #e4f0f1; padding: 15px 0;}.top-bar .container img {float: left;}.top-bar .container ul {float: right; padding-top: 25px;}.top-bar .container li {float: left; width: 125px; text-align: center; font-size: 15px; color:#000; font-weight: 600;}.top-bar .container a li:hover {color: #118798; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;}.container{width: 80%; max-width: 1200px; margin: auto;}div.header {-webkit-transition: 6s; -moz-transition: 6s; -o-transition: 6s;transition: 6s; background: rgba(4, 36, 41, 0.89) url(http://sailsjs.org/images/img_sailsShadow.png) no-repeat 42% bottom; padding: 100px 0 65px;}.header h1#main-title{color: #fff; font-weight: 300; font-size: 2.5em;}.header h3{color: #b1eef7; font-style: italic; font-weight: 300;}.header h3 code{font-style: normal!important; background-color: rgba(255,255,255,0.5); font-weight: 300; color:#0e6471; margin: 0px 5px;}div.main.container{padding: 50px 0;}h1 {color: #118798; font-weight: 300;}code {font-size: inherit; font-family: 'Consolas', 'Monaco', monospace; padding:4px 5px 1px; background-color: #f3f5f7}a{color: #118798; font-weight: 300; text-decoration: underline;}a:hover {color: #0e6471; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;}p{line-height: 1.5em;}blockquote{background-color: #e4f0f1; padding: 25px; line-height: 1.5em; margin: 15px 0;}blockquote span{font-weight: 600; padding-right: 5px;}ul.getting-started{padding: 25px 75px 25px 0; width: 70%; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}ul.getting-started li{padding: 25px 0;}ul.getting-started li h3 {padding-bottom: 10px; font-size: 25px; font-weight: 300;}.sprite{background:url(http://sailsjs.org/images/newapp.sprite.png) no-repeat; position: absolute; left: 0; top:0;}.getting-started .sprite{margin-left:10px;padding-left:60px;height:42px;width:0; float: left;}.getting-started .one{background-position:0 0}.getting-started .two{background-position:0 -42px}.getting-started .three{background-position:0 -83px}div.step {position: relative; padding-left: 70px; opacity: 0.9;}div.step:hover{ opacity: 1;}div.links {float: left; width: 30%; max-width: 325px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #f3f5f7; border: 1px solid #ebebeb; padding: 25px 45px 35px;}div.links h3 {color: #727272; text-align: center; font-size: 28px; font-weight: 300;}div.links h4 {color: #727272; font-size: 17px; font-weight: 600; padding: 15px 0 10px;}div.links .link-list a {text-decoration: none; font-weight: 400;}div.links .link-list a li {padding: 0px 0px 5px 10px;}div.default-page{min-width: 1200px;}.pocket{display:none;}
-</style>
-<script type="text/javascript">
-setTimeout(function sunrise () {
-    document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
-}, 0);
-</script>
+		<!-- synopsis -->
+		<div class="page-header">
+			<h2><i class="fa fa-tachometer"></i> CTO Synopsis</h2>
+		</div>
+		<p>
+			This  week brought one unexpected challenges. As expected from the prior week's observation, our new Node developer, John Smith, had a difficult time assessing his workload this week, and thus was over commited. As a result, a buggy patch was sent to QA last week, and our QA team failed to catch a database validation error. This patch was pushed to roduction Saturday morning, which resulted in over 1000 database write errors. PagerDuty successfully notified me of the errors, and I reverted to the old patch within 20 minutes of the event. I will be making a report of suggestions for our new developer, and our QA tester, along with writing tests against the bugs that slipped through. Our other new developer, Mark Jones successfully completed his weekly sprint commitments, although he was up late Saturday night to do so.
+			<br />Despite the errors on Saturday, our stack had a 99.997% overall uptime. Our app suffered an outage Wednesday afternoon at 12:45:46 GMT, due to a Level3 failure at the Rackspace data center. The HAProxy load balancer dropped for 32 seconds Friday night at 21:57:38 GMT, so I will be adding a measurement of the uptime of that server to this report next week. All feature goals and bug fixes in this week's sprint were completed on time, and are in QA this week. I do not anticipate any issues, so the video profile upload feature many customers are asking for, should launch on time next Friday.
+		</p>
 
-<div class="default-page">
-    <div class="header">
-        <h1 id="main-title" class="container"><%= __('A brand new app.') %></h1>
-        <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
-    </div>
-    <div class="main container clearfix">
-        <!-- <h1>Getting started</h1>
-        <p>Don't worry, we've got your back.</p> -->
-        <ul class="getting-started">
-            <li class="clearfix">
-                <div class="step">
-                    <div class="sprite one"></div>
-                    <h3>Generate a REST API.</h3>
-                    <p>
-                        Run <code>sails generate api user</code>.  This will create two files: a <a href="http://sailsjs.org/#!/documentation/concepts/ORM/Models.html">model</a> <code class="pocket">api/models/User.js</code> and a <a href="http://sailsjs.org/#!/documentation/concepts/Controllers">controller</a><code class="pocket">api/controllers/UserController.js</code>.
-                    </p>
-                </div>
-            </li>
-            <li class="clearfix">
-                <div class="step">
-                    <div class="sprite two"></div>
-                    <h3>
-                        Lift your app.
-                    </h3>
-                    <p>
-                        Run <code>sails lift</code> to start up your app server.  If you visit <a target="_blank" href="http://localhost:1337/user"><code>http://localhost:1337/user</code></a> in your browser, you'll see a <a href="http://sailsjs.org/#!/documentation/reference/blueprint-api">WebSocket-compatible</a> user API.
-                    </p>
-                </div>
-            </li>
-            <li class="clearfix">
-                <div class="step">
-                    <div class="sprite three"></div>
-                    <h3>
-                        Dive in.
-                    </h3>
-                    <p>Blueprints are just the beginning.  You'll probably also want to learn how to customize your app's <a href="http://sailsjs.org/#!/documentation/concepts/Routes">routes</a>, set up <a href="http://sailsjs.org/#!/documentation/concepts/Policies">security policies</a>, configure your <a href="http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html">data sources</a>, and build custom <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/Controllers?q=actions">controller actions</a>. For more help getting started, check out the links on this page.</p>
+		<!-- dev team pulse -->
+		<div class="page-header">
+			<h2><i class="fa fa-male"></i> Dev Team Pulse</h2>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Dev</th>
+					<th>Ontime Bug Fixes</th>
+					<th>&#916; Last Week</th>
+					<th>Ontime Features</th>
+					<th>&#916; Last Week</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Sally Rider</td>
+					<td>100%</td>
+					<td><span class="label label-success">+2%</span></td>
+					<td>100%</td>
+					<td><span class="label label-success">+4%</span></td>
+				</tr>
+				<tr>
+					<td>John Smith</td>
+					<td>72%</td>
+					<td><span class="label label-danger">-19%</span></td>
+					<td>45%</td>
+					<td><span class="label label-danger">-34%</span></td>
+				</tr>
+				<tr>
+					<td>Mark Jones</td>
+					<td>100%</td>
+					<td><span class="label label-success">+5%</span></td>
+					<td>100%</td>
+					<td>0%</td>
+				</tr>
+				<tr>
+					<td>Neil Armstrong</td>
+					<td>94%</td>
+					<td><span class="label label-danger">-5%</span></td>
+					<td>92%</td>
+					<td><span class="label label-success">+1%</span></td>
+				</tr>
+			</tbody>
+		</table>
 
-                </div>
-            </li>
-        </ul>
-        <div class="links">
-            <!-- <h3>Links</h3> -->
-            <ul class="link-list">
+		<!-- tech stack pulse -->
+		<div class="page-header">
+			<h2><i class="fa fa-database"></i> Tech Stack Pulse</h2>
+		</div>
+		<p>
+			<h4>Client Response Time</h4>
+			<canvas id="LoadTimeChart" width="800" height="200"></canvas>
+			<h4>VisuHire Uptime</h4>
+			<canvas id="UpTimeChart" width="800" height="200"></canvas>
+			<h4>VisuHire Error Rates</h4>
+			<canvas id="ErrorRateChart" width="800" height="200"></canvas>
+		</p>
 
-                <h4>Docs</h4>
-                <a target="_blank" href="http://sailsjs.org/#!/documentation/anatomy/myApp"><li>App Structure</li></a>
-                <a target="_blank" href="http://sailsjs.org/#!/documentation/reference"><li>Reference</li></a>
-                <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/extending-sails/Adapters/adapterList.html"><li>Supported Databases</li></a>
+		<!-- milestone pulse -->
+		<div class="page-header">
+			<h2><i class="fa fa-code-fork"></i> Feature Milestone Pulse</h2>
+		</div>
+		<p>
+			<div class="progress">
+		        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100" style="width: 89%"><span>89% - On Time</span></div>
+			</div>
+			<h4>Video Profile Milestone (3 sprints total)</h4>
+			<div class="progress">
+			    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100" style="width: 56%"><span>56% - On Time</span></div>
+			</div>
+			<h4>LinkedIn Integration (4 sprints total)</h4>
+			<div class="progress">
+			    <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100" style="width: 24%"><span>24% - 1 Sprint Behind</span></div>
+			</div>
+			<h4>3 Way Conference Calling (6 sprints total)</h4>
+		</p>
 
-                <h4>Tutorials</h4>
-                <a target="_blank" href="https://github.com/sails101"><li>Sails 101</li></a>
+		<!-- code base pulse -->
+		<div class="page-header">
+			<h2><i class="fa fa-code"></i> Code Base Pulse</h2>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+			  <div class="panel panel-default">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Weekly Commits</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>This Week 34</strong><br />
+			      Last Week 28
+			    </div>
+			  </div>
+			  <div class="panel panel-primary">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Javascript</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>12,567 lines</strong><br />
+			      Up 567 Lines
+			    </div>
+			  </div>
+			</div><!-- /.col-sm-4 -->
+			<div class="col-sm-4">
+			  <div class="panel panel-success">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Bug Fixes</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>This Week 22</strong><br />
+			      Last Week 18
+			    </div>
+			  </div>
+			  <div class="panel panel-info">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Python</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>13,354 lines</strong><br />
+			      Up 1,267 Lines
+			    </div>
+			  </div>
+			</div><!-- /.col-sm-4 -->
+			<div class="col-sm-4">
+			  <div class="panel panel-warning">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Open Bugs</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>This Week 14</strong><br />
+			      Last Week 17
+			    </div>
+			  </div>
+			  <div class="panel panel-danger">
+			    <div class="panel-heading">
+			      <h3 class="panel-title">Roach Events</h3>
+			    </div>
+			    <div class="panel-body">
+			      <strong>This Week 1</strong><br />
+			      Last Week 0
+			    </div>
+			  </div>
+			</div><!-- /.col-sm-4 -->
+		</div>
 
-                <h4>Community</h4>
-                <a target="_blank" href="http://stackoverflow.com/search?q=sails.js"><li>StackOverFlow</li></a>
-                <a target="_blank" href="https://github.com/balderdashy/sails"><li>GitHub</li></a>
-                <a target="_blank" href="https://groups.google.com/forum/#!forum/sailsjs"><li>Google Group</li></a>
-                <a target="_blank" href="http://webchat.freenode.net/"><li>IRC (#sailsjs on freenode)</li></a>
-
-            </ul>
-        </div>
-    </div>
-</div>
+		<!-- action items -->
+		<div class="page-header">
+			<h2><i class="fa fa-bolt"></i> CTO Action Items</h2>
+		</div>
+		<div class="alert alert-danger" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P0</strong>: Identify source of QA missing database write bug. Document, and make appropriate changes to QA procedure to prevent future missed bugs.
+		</div>
+		<div class="alert alert-danger" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P0</strong>: Collect list of all affected users from Staurday's outage, draft message, and send with apology, explanation, and steps that we've taken to prevent future outages.
+		</div>
+		<div class="alert alert-warning" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P1</strong>: Skype feedback meeting with John Smith to develop action items for him to better plan his workload, and avoid overcommiting in the future.
+		</div>
+		<div class="alert alert-warning" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P1</strong>: Add HAProxy load balancer to NewRelic monitoring, and generate uptime metrics for future CTO reports. Identify source of downtime, change stack and fireplan accordingly.
+		</div>
+		<div class="alert alert-info" role="alert">
+			<strong><i class="fa fa-chevron-right"></i> P2</strong>: Finalize proposed changes to tech stack for Feb 12th board meeting, along with monthly budget, and outline reasons for the new redundancies.
+		</div>

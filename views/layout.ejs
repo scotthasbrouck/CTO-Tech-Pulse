@@ -1,12 +1,29 @@
+<!--
+VisuHire CTO Report
+Scott Hasbrouck (C) 2014
+License: CC BY 4.0
+http://creativecommons.org/licenses/by/4.0/
+-->
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>New Sails App</title>
+	  <title>Kickass, Inc. Tech Pulse</title>
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     
+	  <!-- Chart.js graphing -->
+	  <script src="js/chart.js"></script>
+	  <!-- Bootstrap -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+	  <!-- TechPulse Styles -->
+	  <link rel="stylesheet" href="css/TechPulse.css">
+	  <!-- font glyphs -->
+	  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <!--  
         Stylesheets and Preprocessors
         ==============================
@@ -33,7 +50,18 @@
   </head>
 
   <body>
-    <%- body %>
+
+	  <div class="container theme-showcase" role="main">
+
+		  <!-- header -->
+		  <div class="jumbotron">
+			  <img src="images/Rad_Logo.png" />
+			  <h2>Kickass, Inc. Tech Pulse</h2>
+			  <h4>Mar 29th, 2015 Weekly CTO Report</h4>
+			  <h5>Cached Mar 31st, 2015</h5>
+		  </div>
+
+      <%- body %>
 
 
 
@@ -61,31 +89,19 @@
     <!--TEMPLATES-->
     <!--TEMPLATES END-->
 
-
-    <!--
-
-      Client-side Javascript
-      ========================
-
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can 
-      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
-
-      By default, files in your `assets/js` folder are included here
-      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-      and concatenated into a single file.
-      
-      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-      For example, here are a few things you could do:
-          
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
-
-    -->
+	  </div>
 
     <!--SCRIPTS-->
+
+	  <!-- jQuery -->
+	  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	  <!-- Bootstrap -->
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	  <!-- Retina.js -->
+	  <script type="text/javascript" src="js/retina.js"></script>
+	  <!-- TechPulse JS -->
+	  <script src="js/TechPulse.js"></script>
+
     <!--SCRIPTS END-->
   </body>
 </html>
