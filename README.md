@@ -1,5 +1,7 @@
 # CTO Tech Pulse
 
+Hosted example of this: https://s3-us-west-1.amazonaws.com/ctotechpulse/TechPulse.html
+
 ### Motivation
 During the very early stages of a company, there are typically a small handful of close founders that sort of organically develop an in-the-moment communication process... usually distributed over Slack/Hipchat, text, in person, FB Messenger, random phone calls, and the ocasional expletive. Wonderful. That works for about 8 seconds once you add a board of investors and advisors, and start hiring people. _Communication can make or break a startup_.
 
